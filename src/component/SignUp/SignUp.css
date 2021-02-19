@@ -1,0 +1,38 @@
+body {
+  background-color: whitesmoke;
+}
+button {
+  margin: 15px;
+  background-color: royalblue;
+  width: 100px;
+  margin: 10px;
+  padding: 15px;
+  color: orange;
+  border: none;
+}
+form {
+  border: 3px solid #f1f1f1;
+}
+input[type="text"],
+input[type="Password"] {
+  width: 100%;
+  margin: 8px;
+  display: inline-block;
+  padding: 12px 20px;
+  border: 3px solid steelblue;
+  box-sizing: border-box;
+}
+.main {
+  padding: 25px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fafafa;
+  border-radius: 6px;
+  box-shadow: 1px 0px 1px 4px rgb(95, 95, 95);
+}
+sub {
+  width: 100px;
+  padding: 10px 18px;
+  margin: 10px 5px;
+}

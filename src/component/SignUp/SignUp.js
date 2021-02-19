@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import Constants from "../constant/constant";
-import API from "../api/api";
-import Types from "../redux/action/types";
-import { setSignUpData } from "../redux/action/actionFunction";
+import Constants from "../../constant/constant"
+import API from "../../api/api"
+import Types from "../../redux/action/types"
+import { setSignUpData } from "../../redux/action/types";
 import { connect } from "react-redux";
+import "./SignUp.css"
+
 
 const signApi = new API({ url: Constants.CONFIG.BASE_URL });
 signApi.createEntity({ name: Constants.ENTITIES.SignUp, uri: "donors/" });
@@ -131,13 +133,14 @@ class SignUp extends Component {
     this.setState({ redirectToLogin: true });
   };
 
+
   render() {
     if (this.state.redirectToLogin) {
       return (
         <Redirect
           push
           to={{
-            pathname: "/",
+            pathname: "/SignUp",
           }}
         />
       );
@@ -145,7 +148,25 @@ class SignUp extends Component {
     return (
       <>
         <h1>Here {this.props.firstName}</h1>
-        <form
+
+        <form>
+          <div class="main">
+
+            <label>Name:</label>
+            <input type="text" name="name" placeholder="Enter the name" />
+            <label>lastName:</label>
+            <input type="text" name="lastname" placeholder="Enter the lastname" />
+            <label>Email:</label>
+            <input type="text" name="name" placeholder="Enter the emailid" />
+            <label>Password:</label>
+            <input type="Password" name="Password" placeholder="Enter the Password" />
+
+            <button type="submit">SignUp</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button><a onClick={this.backToLogin}>backToLogin</a></button>
+          </div>
+        </form>
+
+        {/* <form
           style={{
             marginTop: 100,
             justifyContent: "center",
@@ -178,8 +199,8 @@ class SignUp extends Component {
           onClick={this.SignUp}
         >
           SignUp
-        </button>
-        <button
+        </button> */}
+        {/* <button
           style={{
             marginTop: 50,
             alignItems: "center",
@@ -188,7 +209,7 @@ class SignUp extends Component {
           onClick={this.backToLogin}
         >
           Back
-        </button>
+        </button> */}
       </>
     );
   }

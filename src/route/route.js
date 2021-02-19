@@ -1,5 +1,5 @@
-import Login from "../component/login";
-import SignUp from "../component/signUp";
+import Login from "../component/Login/Login";
+import SignUp from "../component/SignUp/SignUp";
 
 const routes = [
   {
